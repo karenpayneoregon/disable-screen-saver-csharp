@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Disable Screensaver")]
-[assembly: AssemblyCopyright("Karen Payne 2004-2018")]
+[assembly: AssemblyCopyright("Karen Payne 2004-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

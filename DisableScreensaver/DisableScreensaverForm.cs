@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -19,7 +20,7 @@ namespace DisableScreensaver
         private const string RegistryKey = @"SOFTWARE\DisableScreensaver\";
         private const string RunKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 
-        public static Int32 GetScreenSaverTimeout()
+        public static int GetScreenSaverTimeout()
         {
             var value = 0;
             SystemParametersInfo(SPI_GETSCREENSAVERTIMEOUT, 0, ref value, 0);
@@ -81,8 +82,6 @@ namespace DisableScreensaver
         private static void AutostartClick(object sender, EventArgs e)
         {
             MessageBox.Show("Disabled");
-            //return;
-            //SetAutoStart(((ToolStripMenuItem)sender).Checked);
         }
 
         private static void SetAutoStart(bool autostartMenuItemChecked)
@@ -175,33 +174,34 @@ namespace DisableScreensaver
 
         private void AboutMenu()
         {
-            aboutTextBox.Text = $"Disable Screensaver version {System.Reflection.Assembly.GetExecutingAssembly().GetName().Version}";
+            aboutTextBox.Text = $@"Disable ScreenSaver version {Assembly.GetExecutingAssembly().GetName().Version}";
             aboutTextBox.SelectionLength = 0;
             aboutTextBox.SelectionStart = 0;
 
             Show();
+
             notifyIcon1.ContextMenuStrip = null;
             ShowInTaskbar = true;
             WindowState = FormWindowState.Normal;
 
-            okButon.Focus();
+            OkayButton.Focus();
         }
 
         private ContextMenuStrip GenerateContextMenuStrip()
         {
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip(components);
-            ToolStripMenuItem disabledMenuItem = new ToolStripMenuItem();
-            ToolStripMenuItem autostartMenuItem = new ToolStripMenuItem();
-            ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem();
-            ToolStripSeparator toolStripSeparator = new ToolStripSeparator();
-            ToolStripMenuItem exitMenuItem = new ToolStripMenuItem();
+            var disabledMenuItem = new ToolStripMenuItem();
+            var autoStartMenuItem = new ToolStripMenuItem();
+            var aboutMenuItem = new ToolStripMenuItem();
+            var toolStripSeparator = new ToolStripSeparator();
+            var exitMenuItem = new ToolStripMenuItem();
 
             contextMenuStrip.Items.AddRange
             (
                 new ToolStripItem[]
                 {
                     disabledMenuItem,
-                    autostartMenuItem,
+                    autoStartMenuItem,
                     aboutMenuItem,
                     toolStripSeparator,
                     exitMenuItem
@@ -210,19 +210,19 @@ namespace DisableScreensaver
 
             disabledMenuItem.Checked = !timer1.Enabled;
             disabledMenuItem.CheckOnClick = true;
-            disabledMenuItem.Text = "Disabled";
+            disabledMenuItem.Text = @"Disabled";
             disabledMenuItem.Click += DisabledClick;
-            autostartMenuItem.CheckOnClick = true;
-            autostartMenuItem.Text = "Automatically start";
-            autostartMenuItem.Click += AutostartClick;
+            autoStartMenuItem.CheckOnClick = true;
+            autoStartMenuItem.Text = @"Automatically start";
+            autoStartMenuItem.Click += AutostartClick;
             aboutMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            aboutMenuItem.Text = "About";
+            aboutMenuItem.Text = @"About";
             aboutMenuItem.Click += AboutMenuItemClick;
-            exitMenuItem.Text = "Exit";
+            exitMenuItem.Text = @"Exit";
             exitMenuItem.Click += ExitClick;
 
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey(RunKey, true);
-            autostartMenuItem.Checked = CheckAutoRunRegSet(rkApp);
+            autoStartMenuItem.Checked = CheckAutoRunRegSet(rkApp);
 
             return contextMenuStrip;
         }
@@ -251,7 +251,7 @@ namespace DisableScreensaver
             }
         }
 
-        private void OkButonClick(object sender, EventArgs e)
+        private void OkayButtonClick(object sender, EventArgs e)
         {
             notifyIcon1.ContextMenuStrip = GenerateContextMenuStrip();
             ShowInTaskbar = false;
