@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisableScreenSaverForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.okButon = new System.Windows.Forms.Button();
+            this.OkayButton = new System.Windows.Forms.Button();
             this.aboutTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -50,16 +50,16 @@
             this.notifyIcon1.Click += new System.EventHandler(this.NotifyIcon1Click);
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.NotifyIcon1DoubleClick);
             // 
-            // okButon
+            // OkayButton
             // 
-            this.okButon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButon.Location = new System.Drawing.Point(178, 89);
-            this.okButon.Name = "okButon";
-            this.okButon.Size = new System.Drawing.Size(75, 23);
-            this.okButon.TabIndex = 7;
-            this.okButon.Text = "Ok";
-            this.okButon.UseVisualStyleBackColor = true;
-            this.okButon.Click += new System.EventHandler(this.OkButonClick);
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.Location = new System.Drawing.Point(178, 89);
+            this.OkayButton.Name = "OkayButton";
+            this.OkayButton.Size = new System.Drawing.Size(75, 23);
+            this.OkayButton.TabIndex = 7;
+            this.OkayButton.Text = "Ok";
+            this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButtonClick);
             // 
             // aboutTextBox
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(265, 120);
-            this.Controls.Add(this.okButon);
+            this.Controls.Add(this.OkayButton);
             this.Controls.Add(this.aboutTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -100,7 +100,7 @@
 
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Button okButon;
+        private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.TextBox aboutTextBox;
     }
 }
