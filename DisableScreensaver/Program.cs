@@ -10,7 +10,7 @@ namespace DisableScreensaver
         {
             Application.EnableVisualStyles() ;
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DisableScreensaverForm());
+            Application.Run(new DisableScreenSaverForm());
         }
     }
 }

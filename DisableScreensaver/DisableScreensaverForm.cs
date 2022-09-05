@@ -6,7 +6,7 @@ using Microsoft.Win32;
 namespace DisableScreensaver
 {
 
-    public partial class DisableScreensaverForm : Form
+    public partial class DisableScreenSaverForm : Form
     {
         private const int SPI_GETSCREENSAVERTIMEOUT = 14;
         [DllImport("user32.dll")]
@@ -26,7 +26,7 @@ namespace DisableScreensaver
             return value;
         }
 
-        public DisableScreensaverForm()
+        public DisableScreenSaverForm()
         {
             InitializeComponent();
 
@@ -81,8 +81,6 @@ namespace DisableScreensaver
         private static void AutostartClick(object sender, EventArgs e)
         {
             MessageBox.Show("Disabled");
-            //return;
-            //SetAutoStart(((ToolStripMenuItem)sender).Checked);
         }
 
         private static void SetAutoStart(bool autostartMenuItemChecked)

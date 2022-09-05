@@ -1,6 +1,6 @@
 ﻿namespace DisableScreensaver
 {
-    partial class DisableScreensaverForm
+    partial class DisableScreenSaverForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisableScreensaverForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisableScreenSaverForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.okButon = new System.Windows.Forms.Button();
@@ -63,9 +63,9 @@
             // 
             // aboutTextBox
             // 
-            this.aboutTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.aboutTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aboutTextBox.Location = new System.Drawing.Point(12, 12);
             this.aboutTextBox.Multiline = true;
             this.aboutTextBox.Name = "aboutTextBox";
@@ -73,7 +73,7 @@
             this.aboutTextBox.Size = new System.Drawing.Size(241, 68);
             this.aboutTextBox.TabIndex = 6;
             // 
-            // DisableScreensaverForm
+            // DisableScreenSaverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DisableScreensaverForm";
+            this.Name = "DisableScreenSaverForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Disable Screensaver";
