@@ -7,10 +7,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Disable Screensaver")]
 [assembly: AssemblyDescription("Disables your screen saver")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Karen Payne inc")]
 [assembly: AssemblyProduct("Disable Screensaver")]
 [assembly: AssemblyCopyright("Karen Payne 2004-2022")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("None")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
